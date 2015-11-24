@@ -1,4 +1,4 @@
-package ru.marstefo.liss.geo.mvc.commands 
+package mvc.commands 
 {
 	import ru.marstefo.liss.net.commands.LoadCommandBase;
 	import mvc.models.StorageConfig;

@@ -19,7 +19,7 @@ package
 	import ru.marstefo.liss.geo.mvc.commands.AssignProbeCommand;
 	import ru.marstefo.liss.geo.mvc.commands.LoadSessionCommand;
 	import ru.marstefo.liss.geo.mvc.commands.PingCommand;
-	import ru.marstefo.liss.geo.mvc.commands.StartupCommand;
+	import mvc.commands.StartupCommand;
 	import ru.marstefo.liss.geo.mvc.commands.ToggleLayerCommand;
 	import ru.marstefo.liss.geo.mvc.commands.UpdateRoomVarsCommand;
 	import ru.marstefo.liss.geo.mvc.events.GameEvent;

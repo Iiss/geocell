@@ -1,4 +1,4 @@
-package ru.marstefo.liss.geo.mvc.commands 
+package mvc.commands 
 {
 	import eu.alebianco.robotlegs.utils.impl.SequenceMacro;
 	import ru.marstefo.liss.net.commands.LoadConfigCommand;

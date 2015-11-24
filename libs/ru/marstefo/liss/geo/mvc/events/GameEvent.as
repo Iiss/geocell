@@ -18,6 +18,8 @@ package ru.marstefo.liss.geo.mvc.events
 		public static const PING:String = "PING";
 		public static const LOAD_SESSION:String = "LOAD_SESSION";
 		public static const TOGGLE_LAYER:String = "TOGGLE_LAYER";
+		public static const PLACE_PLANT:String = "PLACE_PLANT";
+		public static const REMOVE_PLANT:String = "REMOVE_PLANT";
 		public var data:*
 		
 		public function GameEvent(type:String, bubbles:Boolean=false, cancelable:Boolean=false) 
