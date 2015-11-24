@@ -1,9 +1,9 @@
-package mvc.mediators 
+package ru.marstefo.liss.geo.mvc.mediators 
 {
 	import com.smartfoxserver.v2.logging.LoggerEvent;
 	import com.smartfoxserver.v2.SmartFox;
 	import flash.text.TextFormat;
-	import mvc.views.ConsoleView;
+	import ru.marstefo.liss.geo.mvc.views.ConsoleView;
 	import robotlegs.bender.bundles.mvcs.Mediator;
 	import ru.marstefo.liss.utils.LogService;
 	import spark.utils.TextFlowUtil;

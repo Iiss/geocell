@@ -1,5 +1,7 @@
-package mvc.commands 
+package ru.marstefo.liss.geo.mvc.commands 
 {
+	import ru.marstefo.liss.net.commands.ExtensionCommand;
+	
 	public class LoadSessionCommand extends ExtensionCommand 
 	{
 		import ru.marstefo.liss.net.commands.ExtensionCommand;

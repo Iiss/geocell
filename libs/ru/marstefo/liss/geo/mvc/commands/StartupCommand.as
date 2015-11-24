@@ -1,11 +1,11 @@
-package mvc.commands 
+package ru.marstefo.liss.geo.mvc.commands 
 {
 	import eu.alebianco.robotlegs.utils.impl.SequenceMacro;
 	import ru.marstefo.liss.net.commands.LoadConfigCommand;
 	import ru.marstefo.liss.net.commands.SFSConnectCommand;
 	import ru.marstefo.liss.net.commands.SFSLoginCommand;
 	import ru.marstefo.liss.net.commands.SFSJoinRoomCommand;
-	import mvc.commands.SetupSessionCommand;
+	import ru.marstefo.liss.geo.mvc.commands.SetupSessionCommand;
 	/**
 	 * ...
 	 * @author liss

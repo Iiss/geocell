@@ -1,4 +1,4 @@
-package mvc.commands 
+package ru.marstefo.liss.geo.mvc.commands 
 {
 	import com.smartfoxserver.v2.entities.Room;
 	import com.smartfoxserver.v2.SmartFox;

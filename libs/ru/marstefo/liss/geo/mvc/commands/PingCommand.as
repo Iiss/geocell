@@ -1,4 +1,4 @@
-package mvc.commands 
+package ru.marstefo.liss.geo.mvc.commands 
 {
 	import ru.marstefo.liss.net.commands.ExtensionCommand;
 	
