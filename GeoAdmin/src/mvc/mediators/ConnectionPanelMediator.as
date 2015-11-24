@@ -1,15 +1,10 @@
 package mvc.mediators 
 {
-	import robotlegs.bender.bundles.mvcs.Mediator;
-	import com.smartfoxserver.v2.logging.LoggerEvent;
+	import com.smartfoxserver.v2.core.SFSEvent;
 	import com.smartfoxserver.v2.SmartFox;
-	import flash.text.TextFormat;
-	import ru.marstefo.liss.geo.mvc.views.ConsoleView;
+	import mvc.views.ConnectionPanel;
 	import robotlegs.bender.bundles.mvcs.Mediator;
 	import ru.marstefo.liss.utils.LogService;
-	import spark.utils.TextFlowUtil;
-	import mvc.views.ConnectionPanel;
-	import com.smartfoxserver.v2.core.SFSEvent;
 	/**
 	 * ...
 	 * @author liss

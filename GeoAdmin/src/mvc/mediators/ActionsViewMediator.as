@@ -1,12 +1,11 @@
 package mvc.mediators 
 {
-	import ru.marstefo.liss.geo.mvc.events.GameEvent;
-	import mvc.models.LayerModel;
-	import mvc.models.SessionModel;
-	import spark.components.Button;
-	import robotlegs.bender.bundles.mvcs.Mediator;
-	import mvc.views.ActionsView
 	import flash.events.MouseEvent;
+	import mvc.models.SessionModel;
+	import mvc.views.ActionsView;
+	import robotlegs.bender.bundles.mvcs.Mediator;
+	import ru.marstefo.liss.geo.mvc.events.GameEvent;
+	import spark.components.Button;
 	import spark.components.supportClasses.ItemRenderer;
 	
 	public class ActionsViewMediator extends Mediator 

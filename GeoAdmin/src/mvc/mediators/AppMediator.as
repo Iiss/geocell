@@ -1,14 +1,13 @@
 package mvc.mediators 
 {
+	import com.smartfoxserver.v2.core.SFSEvent;
+	import com.smartfoxserver.v2.SmartFox;
+	import flash.events.Event;
 	import flash.events.TimerEvent;
 	import flash.utils.Timer;
-	import ru.marstefo.liss.geo.mvc.events.GameEvent;
-	import mvc.models.SessionEvent;
 	import mvc.models.SessionModel;
 	import robotlegs.bender.bundles.mvcs.Mediator;
-	import com.smartfoxserver.v2.SmartFox;
-	import com.smartfoxserver.v2.core.SFSEvent;
-	import flash.events.Event;
+	import ru.marstefo.liss.geo.mvc.events.GameEvent;
 	/**
 	 * ...
 	 * @author liss

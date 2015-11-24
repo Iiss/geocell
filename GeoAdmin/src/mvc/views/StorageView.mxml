@@ -11,10 +11,10 @@
 	<fx:Script>
 		<![CDATA[
 		import flash.events.MouseEvent;
-		import ru.marstefo.liss.geo.mvc.events.GameEvent;
-		import spark.components.supportClasses.ItemRenderer;
 		import mvc.views.AssignProbeForm;
 		import mx.managers.PopUpManager;
+		import ru.marstefo.liss.geo.mvc.events.GameEvent;
+		import spark.components.supportClasses.ItemRenderer;
 		
 		private var _form:AssignProbeForm = new mvc.views.AssignProbeForm();
 		public function get form():AssignProbeForm { return _form; }

@@ -2,15 +2,13 @@ package
 {
 	import com.smartfoxserver.v2.core.SFSEvent;
 	import com.smartfoxserver.v2.SmartFox;
-	import ru.marstefo.liss.geo.mvc.commands.StartupCommand;
-	import ru.marstefo.liss.geo.mvc.commands.UpdateRoomVarsCommand;
+	import mvc.mediators.ActionsViewMediator;
 	import mvc.mediators.AppMediator;
 	import mvc.mediators.ConnectionPanelMediator;
-	import ru.marstefo.liss.geo.mvc.mediators.ConsoleMediator;
 	import mvc.mediators.StorageViewMediator;
 	import mvc.models.SessionModel;
+	import mvc.views.ActionsView;
 	import mvc.views.ConnectionPanel;
-	import ru.marstefo.liss.geo.mvc.views.ConsoleView;
 	import mvc.views.StorageView;
 	import robotlegs.bender.extensions.contextView.ContextView;
 	import robotlegs.bender.extensions.directCommandMap.api.IDirectCommandMap;
@@ -18,15 +16,17 @@ package
 	import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 	import robotlegs.bender.framework.api.IConfig;
 	import robotlegs.bender.framework.api.IInjector;
+	import ru.marstefo.liss.geo.mvc.commands.AssignProbeCommand;
+	import ru.marstefo.liss.geo.mvc.commands.LoadSessionCommand;
+	import ru.marstefo.liss.geo.mvc.commands.PingCommand;
+	import ru.marstefo.liss.geo.mvc.commands.StartupCommand;
+	import ru.marstefo.liss.geo.mvc.commands.ToggleLayerCommand;
+	import ru.marstefo.liss.geo.mvc.commands.UpdateRoomVarsCommand;
+	import ru.marstefo.liss.geo.mvc.events.GameEvent;
+	import ru.marstefo.liss.geo.mvc.mediators.ConsoleMediator;
+	import ru.marstefo.liss.geo.mvc.views.ConsoleView;
 	import ru.marstefo.liss.net.models.ConfigModel;
 	import ru.marstefo.liss.utils.LogService;
-	import ru.marstefo.liss.geo.mvc.events.GameEvent
-	import ru.marstefo.liss.geo.mvc.commands.AssignProbeCommand;
-	import ru.marstefo.liss.geo.mvc.commands.PingCommand;
-	import mvc.views.ActionsView;
-	import mvc.mediators.ActionsViewMediator;
-	import ru.marstefo.liss.geo.mvc.commands.LoadSessionCommand;
-	import ru.marstefo.liss.geo.mvc.commands.ToggleLayerCommand;
 	/**
 	 * ...
 	 * @author liss

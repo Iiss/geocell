@@ -11,12 +11,12 @@
 	</fx:Declarations>
 	<fx:Script>
 		<![CDATA[
-		import robotlegs.bender.framework.impl.Context;
-		import robotlegs.bender.extensions.contextView.ContextView;
 		import bundles.MVCSBundleNoTraceLog;
+		import flash.display.StageScaleMode;
+		import robotlegs.bender.extensions.contextView.ContextView;
 		import robotlegs.bender.extensions.signalCommandMap.SignalCommandMapExtension;
 		import robotlegs.bender.framework.api.IContext;
-		import flash.display.StageScaleMode;
+		import robotlegs.bender.framework.impl.Context;
 		
 		protected var context:IContext;
 		private function init():void
