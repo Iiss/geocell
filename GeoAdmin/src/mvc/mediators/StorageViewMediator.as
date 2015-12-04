@@ -1,9 +1,9 @@
 package mvc.mediators 
 {
-	import ru.marstefo.liss.geo.mvc.events.GameEvent;
 	import mvc.models.SessionModel;
 	import mvc.views.StorageView;
 	import robotlegs.bender.bundles.mvcs.Mediator;
+	import ru.marstefo.liss.geo.mvc.events.GameEvent;
 	
 	public class StorageViewMediator extends Mediator
 	{

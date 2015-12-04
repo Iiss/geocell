@@ -5,13 +5,11 @@ package mvc.mediators
 	import flash.events.Event;
 	import flash.events.TimerEvent;
 	import flash.utils.Timer;
+	import mvc.models.SessionEvent;
 	import mvc.models.SessionModel;
 	import robotlegs.bender.bundles.mvcs.Mediator;
 	import ru.marstefo.liss.geo.mvc.events.GameEvent;
-	/**
-	 * ...
-	 * @author liss
-	 */
+	
 	public class AppMediator extends Mediator
 	{
 		[Inject]
@@ -32,13 +30,19 @@ package mvc.mediators
 		{
 			super.initialize();
 			eventMap.mapListener(sfs, SFSEvent.ROOM_VARIABLES_UPDATE, _dispatchForward);
-			
+			eventMap.mapListener(session, SessionEvent.LOCKED, _onLock);
+			eventMap.mapListener(session, SessionEvent.UNLOCKED, _onLock);
 			var t:Timer = new Timer(10000, 0);
-			t.addEventListener(TimerEvent.TIMER, onTimer);
+			t.addEventListener(TimerEvent.TIMER, _onTimer);
 			t.start();
 		}
 		
-		private function onTimer(e:TimerEvent):void
+		private function _onLock(e:SessionEvent):void
+		{
+			view.actionsPanel.enabled = view.storage.enabled = !session.locked;
+		}
+		
+		private function _onTimer(e:TimerEvent):void
 		{
 			dispatch(new GameEvent(GameEvent.PING));
 		}

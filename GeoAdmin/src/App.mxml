@@ -38,8 +38,8 @@
 		<views:ConnectionPanel width="100%" />
 		<commonviews:ConsoleView width="100%" height="100"/>
 		<s:HGroup width="100%" height="100%" paddingTop="20" gap="0">
-			<views:StorageView width="350" height="100%"/>
-			<views:ActionsView width="200" height="100%"/>
+			<views:StorageView id="storage" width="350" height="100%"/>
+			<views:ActionsView id="actionsPanel" width="200" height="100%"/>
 		</s:HGroup>
 	</s:VGroup>
 </s:Application>

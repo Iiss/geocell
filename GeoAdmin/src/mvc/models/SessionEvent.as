@@ -11,6 +11,8 @@ package mvc.models
 		public static const LOAD:String = "LOAD";
 		public static const READY:String = "READY";
 		public static const NEXT_SESSION:String = "NEXT_SESSION";
+		public static const LOCKED:String = "LOCKED";
+		public static const UNLOCKED:String = "UNLOCKED";
 		
 		public function SessionEvent(type:String, bubbles:Boolean=false, cancelable:Boolean=false) 
 		{ 

@@ -16,16 +16,26 @@ package mvc.models
 		private static const LAYERS_DATA_VAR:String = "layers";
 		private static const HAS_COMMON_MAPS_VAR:String = "hasCommonMaps";
 		private static const EPIC_MAPS_VAR:String = "epicMaps";
+		private const LOCK_DATA_VAR:String = "locked";
 		
 		private var _room:Room;
 		private var _storage:ArrayCollection;
 		private var _layers:ArrayCollection;
 		private var _maps:ArrayCollection;
+		private var _locked:Boolean;
 		
 		public function get storage():ArrayCollection { return _storage; }
 		public function get room():Room { return _room; }
 		public function get layers():ArrayCollection { return _layers; }
 		public function get maps():ArrayCollection { return _maps; }
+		public function get locked():Boolean { return _locked; }
+		public function set locked(value:Boolean):void
+		{
+			if (value == _locked) return;
+			_locked = value;
+			var type:String = _locked ? SessionEvent.LOCKED : SessionEvent.UNLOCKED;
+			dispatchEvent(new SessionEvent(type));
+		}
 		
 		public function SessionModel() 
 		{
@@ -50,6 +60,10 @@ package mvc.models
 			{
 				switch (roomVar)
 				{
+					case LOCK_DATA_VAR:
+						checkLock();
+						break;
+						
 					case LAYERS_DATA_VAR:
 						updateLayers();
 						break;
@@ -59,6 +73,11 @@ package mvc.models
 						break;
 				}
 			}
+		}
+		
+		private function checkLock():void
+		{
+			locked = room.getVariable(LOCK_DATA_VAR).getBoolValue();
 		}
 		
 		private function updateMapList():void
