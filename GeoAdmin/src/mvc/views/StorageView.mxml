@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<s:List xmlns:fx="http://ns.adobe.com/mxml/2009" 
-               xmlns:s="library://ns.adobe.com/flex/spark" 
-               xmlns:mx="library://ns.adobe.com/flex/halo"
-			   itemRenderer="mvc.views.itemRenderers.StorageRenderer"
-			   borderAlpha="0" click="_onClick(event)">
+<s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			    xmlns:s="library://ns.adobe.com/flex/spark" 
+			    xmlns:mx="library://ns.adobe.com/flex/halo"
+				xmlns:spark="flex.utils.spark.*"
+				paddingTop="0" 
+				paddingLeft="0" 
+				paddingRight="0" 
+				paddingBottom="0"
+				>
 	
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
@@ -26,13 +30,23 @@
 			{
 				PopUpManager.addPopUp(_form, this, true);
 				PopUpManager.centerPopUp(_form);
-				_form.data = selectedItem;
+				_form.data = list.selectedItem;
 			} 
 		}
 		
 		]]>
 	</fx:Script>
-	<s:layout>
-		<s:TileLayout requestedColumnCount="4" columnWidth="100" rowHeight="100" requestedRowCount="4"/>
-	</s:layout>
-</s:List>
+	<s:Label text="Склад"></s:Label>
+	<s:List id="list"
+			itemRenderer="mvc.views.itemRenderers.StorageRenderer"
+			click="_onClick(event)">
+		<s:layout>
+			<s:TileLayout 
+				paddingTop="10" 
+				paddingLeft="10" 
+				paddingRight="10" 
+				paddingBottom="10"
+				requestedColumnCount="3" columnWidth="95" rowHeight="95" requestedRowCount="2"/>
+		</s:layout>
+	</s:List>
+</s:VGroup>

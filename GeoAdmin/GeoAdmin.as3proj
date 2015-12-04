@@ -6,8 +6,8 @@
     <movie input="" />
     <movie path="bin\GeoAdmin.swf" />
     <movie fps="30" />
-    <movie width="800" />
-    <movie height="600" />
+    <movie width="570" />
+    <movie height="410" />
     <movie version="10" />
     <movie minorVersion="2" />
     <movie platform="Flash Player" />

@@ -4,6 +4,7 @@
                xmlns:mx="library://ns.adobe.com/flex/mx"
 			   xmlns:views="mvc.views.*"
 			   xmlns:commonviews="ru.marstefo.liss.geo.mvc.views.*"
+			   backgroundColor="0xcccccc"
 			   addedToStage="init()">
 	
 	<fx:Declarations>
@@ -29,12 +30,16 @@
 		}
 		]]>
 	</fx:Script>
-	<s:VGroup width="100%" gap="0">
+	<s:VGroup width="100%" gap="0"
+		paddingTop="10" 
+		paddingLeft="10" 
+		paddingRight="10" 
+		paddingBottom="10">
 		<views:ConnectionPanel width="100%" />
 		<commonviews:ConsoleView width="100%" height="100"/>
-		<s:HGroup width="100%" height="100%">
-			<views:StorageView minWidth="450" width="100%" height="100%"/>
-			<views:ActionsView minWidth="100" height="100%"/>
+		<s:HGroup width="100%" height="100%" paddingTop="20" gap="0">
+			<views:StorageView width="350" height="100%"/>
+			<views:ActionsView width="200" height="100%"/>
 		</s:HGroup>
 	</s:VGroup>
 </s:Application>

@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009" 
                xmlns:s="library://ns.adobe.com/flex/spark" 
-               xmlns:mx="library://ns.adobe.com/flex/halo">
+               xmlns:mx="library://ns.adobe.com/flex/halo"
+			   xmlns:spark="flex.utils.spark.*"
+			   gap="20">
 	
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
-	<s:HGroup>
-		<s:DropDownList id="mapSelector" labelField="title" width="100%" requireSelection="true" />
-		<s:Button id="loadSessionBtn" label="Загрузить"/>
-	</s:HGroup>
-	<s:DataGroup id="layerSelector" itemRenderer="mvc.views.itemRenderers.LayerItemRenderer">
-		<s:layout>
-			<s:VerticalLayout horizontalAlign="justify" gap="0"/>
-		</s:layout>
-	</s:DataGroup>
+	<spark:TitledBorderBox title="Управление играми" width="100%">
+		<s:VGroup width="100%" height="100%" 
+			paddingTop="10" 
+			paddingLeft="10" 
+			paddingRight="10" 
+			paddingBottom="10">
+			<s:DropDownList id="mapSelector" labelField="title" width="100%" requireSelection="true" />
+			<s:Button id="loadSessionBtn" width="100%" label="Загрузить"/>
+		</s:VGroup>
+	</spark:TitledBorderBox>
+	<spark:TitledBorderBox title="Управление слоями" width="100%"
+		paddingTop="10" 
+		paddingLeft="10" 
+		paddingRight="10" 
+		paddingBottom="10">
+		<s:DataGroup id="layerSelector" width="100%" itemRenderer="mvc.views.itemRenderers.LayerItemRenderer">
+			<s:layout>
+				<s:VerticalLayout horizontalAlign="justify" gap="5"/>
+			</s:layout>
+		</s:DataGroup>
+	</spark:TitledBorderBox>
 </s:VGroup>

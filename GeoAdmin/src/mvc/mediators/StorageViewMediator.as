@@ -20,7 +20,7 @@ package mvc.mediators
 		override public function initialize():void 
 		{
 			super.initialize();
-			view.dataProvider = sessionModel.storage;
+			view.list.dataProvider = sessionModel.storage;
 			eventMap.mapListener(view.form, GameEvent.ASSIGN_PROBE, _onSubmit);
 		}
 		

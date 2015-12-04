@@ -15,5 +15,5 @@
 		}
 		]]>
 	</fx:Script>
-	<s:Button label="{data.title}" color="{getColor(data)}"/>
+	<s:Button label="{data.title}" color="{getColor(data)}" width="100%" />
 </s:ItemRenderer>
