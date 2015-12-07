@@ -1,4 +1,4 @@
-package ru.marstefo.liss.geo.mvc.commands 
+package mvc.commands 
 {
 	import com.smartfoxserver.v2.entities.Room;
 	import com.smartfoxserver.v2.SmartFox;
@@ -37,7 +37,6 @@ package ru.marstefo.liss.geo.mvc.commands
 				logger.log("Start session setup...");
 				var room:Room = sfs.getRoomByName(config.room);
 				sessionModel.setup(room);
-				logger.log("Session ready");
 			}
 			catch (e:Error)
 			{

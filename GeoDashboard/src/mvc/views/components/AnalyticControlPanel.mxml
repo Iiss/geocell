@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:BorderContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+               xmlns:s="library://ns.adobe.com/flex/spark" 
+               xmlns:mx="library://ns.adobe.com/flex/halo"
+			   xmlns:comp="mvc.views.components.*">
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+		import mvc.views.components.Browser;
+		import mx.managers.PopUpManager;
+		
+		public var wiki:Browser = new Browser();
+		
+		public function showWiki():void
+		{
+			wiki.width=stage.stageWidth;
+			wiki.height = stage.stageHeight;
+			
+			PopUpManager.addPopUp(wiki, this, true);
+			
+ 			if (!wiki.htmlBox.location)
+			{
+				wiki.htmlBox.location = wiki.homeURL;
+			}
+		}
+		]]>
+	</fx:Script>
+	<s:layout>
+		<s:VerticalLayout paddingTop="5" paddingBottom="5" paddingLeft="5" paddingRight="5"/>
+	</s:layout>
+	<s:VGroup>
+		<comp:LayerSelector height="100%"/>
+		<comp:Legend width="200" id="legend"/>
+	</s:VGroup>
+	<comp:CellInfoPanel height="100%" width="145" />
+	<s:Button id="scanRequestBtn" label="Запрос" width="145"/>
+	<s:Button id="scanBtn" label="Сканировать" width="145"/>
+	<s:Button id="probeBtn" label="Доставить пробу" width="145" visible="false" includeInLayout="false" />
+	<s:Button id="placePlantBtn" label="Начать добычу" width="145" visible="false" includeInLayout="false" />
+	<s:Button id="removePlantBtn" label="Остановить добычу" width="145" visible="false" includeInLayout="false" />
+	<s:Button id="wikiBtn" label="Wiki" width="145" click="showWiki()"/>
+</s:BorderContainer>
