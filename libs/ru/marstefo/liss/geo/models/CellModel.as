@@ -9,6 +9,7 @@ package ru.marstefo.liss.geo.models
 		public var layers:Array;
 		public var x:int;
 		public var y:int;
+		public var plant:*;
 		
 		public function CellModel(layersList:Array) 
 		{

@@ -6,10 +6,10 @@ package
 	import flash.events.TimerEvent;
 	import flash.geom.Point;
 	import flash.utils.Timer;
-	import mvc.models.SessionEvent;
-	import mvc.models.SessionModel;
+	import ru.marstefo.liss.geo.models.SessionEvent;
+	import ru.marstefo.liss.geo.models.SessionModel;
 	import robotlegs.bender.bundles.mvcs.Mediator;
-	import ru.marstefo.liss.geo.mvc.events.GameEvent;
+	import ru.marstefo.liss.geo.events.GameEvent;
 	/**
 	 * ...
 	 * @author liss

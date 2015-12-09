@@ -2,10 +2,10 @@
 <s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
                        xmlns:s="library://ns.adobe.com/flex/spark"
                        xmlns:mx="library://ns.adobe.com/flex/mx"
-					   xmlns:views="mvc.views.*"
-					   xmlns:comp="mvc.views.components.*"
-					   xmlns:gameobj="mvc.views.gameobjects.*"
-					   xmlns:commonviews="ru.marstefo.liss.geo.mvc.views.*"
+					   xmlns:views="views.*"
+					   xmlns:comp="views.components.*"
+					   xmlns:gameobj="views.gameobjects.*"
+					   xmlns:commonviews="ru.marstefo.liss.geo.views.*"
 					   addedToStage="init()"
 					   showStatusBar="false">
 			   
@@ -13,7 +13,7 @@
 		<![CDATA[
 		import robotlegs.bender.framework.impl.Context;
 		import robotlegs.bender.extensions.contextView.ContextView;
-		import bundles.MVCSBundleNoTraceLog;
+		import ru.marstefo.liss.net.bundles.MVCSBundleNoTraceLog;
 		import robotlegs.bender.framework.api.IContext;
 		import flash.display.StageScaleMode;
 		import com.greensock.TweenNano;
@@ -46,7 +46,7 @@
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
-	<views:MapView id ="map" width="800" height="450"
+	<commonviews:MapView id ="map" width="800" height="450"
 	scaleX="{width/800}" scaleY="{height/450}"
 		visible="false" visible.in_game="true"/>
 	<s:Group visible="false" visible.in_game="true"
