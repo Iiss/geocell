@@ -85,7 +85,7 @@ package
 			eventCommandMap.map(GameEvent.PLACE_PLANT, GameEvent).toCommand(PlacePlantCommand);
 			eventCommandMap.map(GameEvent.REMOVE_PLANT, GameEvent).toCommand(RemovePlantCommand);
 			//Commands
-			directCommandMap.map(StartupCommand).execute();
+			directCommandMap.map(commands.StartupCommand).execute();
 		}
 		
 	}
