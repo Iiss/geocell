@@ -1,0 +1,10 @@
+<!--
+	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	MarsTefo Client Configuration file
+	(c) 2015 MarsTefo
+	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+-->
+<MarsClientConfig>
+	<login>geo_table</login>
+	<room>GeoCell</room>
+</MarsClientConfig>

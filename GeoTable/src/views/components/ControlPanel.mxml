@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:BorderContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+               xmlns:s="library://ns.adobe.com/flex/spark" 
+               xmlns:mx="library://ns.adobe.com/flex/halo"
+			   xmlns:commoncomp="ru.marstefo.liss.geo.views.components.*"
+			   xmlns:commonviews="ru.marstefo.liss.geo.views.*">
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:layout>
+		<s:VerticalLayout paddingTop="5" paddingBottom="5" paddingLeft="5" paddingRight="5"/>
+	</s:layout>
+	<s:VGroup>
+		<commoncomp:LayerSelector height="100%"/>
+		<commoncomp:Legend width="200" id="legend"/>
+	</s:VGroup>
+	<commoncomp:CellInfoPanel height="100%" width="145" />
+	<s:Button id="scanBtn" label="Сканировать" width="145"/>
+	<s:Button id="probeBtn" label="Доставить пробу" width="145"/>
+</s:BorderContainer>
