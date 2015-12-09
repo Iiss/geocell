@@ -5,7 +5,7 @@
 					   xmlns:views="mvc.views.*"
 					   xmlns:comp="mvc.views.components.*"
 					   xmlns:gameobj="mvc.views.gameobjects.*"
-					   xmlns:commonviews="ru.marstefo.liss.geo.mvc.views.*"
+					   xmlns:commonviews="ru.marstefo.liss.geo.views.*"
 					   addedToStage="init()"
 					   showStatusBar="false">
 			   
@@ -13,7 +13,7 @@
 		<![CDATA[
 		import robotlegs.bender.framework.impl.Context;
 		import robotlegs.bender.extensions.contextView.ContextView;
-		import bundles.MVCSBundleNoTraceLog;
+		import ru.marstefo.liss.net.bundles.MVCSBundleNoTraceLog;
 		import robotlegs.bender.framework.api.IContext;
 		import flash.display.StageScaleMode;
 		import com.greensock.TweenNano;
@@ -46,20 +46,16 @@
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
-	<views:MapView id ="map" width="800" height="450"
+	<commonviews:MapView id ="map" width="800" height="450"
 	scaleX="{width/800}" scaleY="{height/450}"
 		visible="false" visible.in_game="true"/>
 	<s:Group visible="false" visible.in_game="true"
 	width="800" height="450"
 	scaleX="{width/800}" scaleY="{height/450}">
-		
 		<gameobj:StationAdam x="137.5" y="87.5"/>
 		<gameobj:StationEva x="437.5" y="237.5"/>
-		<gameobj:CellSelector id="selector"
-	/>
-<!--		<views:ScanView width="100%" height="100%"/>-->
+		<gameobj:CellSelector id="selector"/>
 	</s:Group>
-<!--	<comp:SelectionLock width="100%" height="100%" includeIn="in_game" visible="false"/>-->
 	<comp:AnalyticControlPanel
 		height="100%" width="155" x="{width-155}"
 		visible="false" visible.in_game="true"/>

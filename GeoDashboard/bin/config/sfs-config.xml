@@ -7,9 +7,8 @@
 
 <SmartFoxConfig>
 
-	<!-- Mandatory Settings
-	 <ip>192.168.3.52</ip>-->
-	<ip>127.0.0.1</ip>
+	<!-- Mandatory Settings -->
+	 <ip>192.168.3.52</ip>
 	<port>9933</port>
 	<zone>MarsPlanetarium</zone>
 	<!-- End Mandatory Settings -->

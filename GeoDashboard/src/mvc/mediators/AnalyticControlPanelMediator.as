@@ -1,13 +1,13 @@
 package mvc.mediators 
 {
 	import flash.events.MouseEvent;
-	import mvc.models.CellLayerModel;
-	import mvc.models.SessionEvent;
-	import mvc.models.SessionModel;
 	import mvc.views.components.AnalyticControlPanel;
 	import robotlegs.bender.bundles.mvcs.Mediator;
-	import ru.marstefo.liss.geo.mvc.events.GameEvent;
-	import mvc.models.WikiConfig;
+	import ru.marstefo.liss.geo.events.GameEvent;
+	import ru.marstefo.liss.geo.models.CellLayerModel;
+	import ru.marstefo.liss.geo.models.SessionEvent;
+	import ru.marstefo.liss.geo.models.SessionModel;
+	import ru.marstefo.liss.geo.models.WikiConfig;
 	/**
 	 * ...
 	 * @author liss
@@ -36,10 +36,6 @@ package mvc.mediators
 			eventMap.mapListener(sessionModel, SessionEvent.LOCKED, _onLock);
 			eventMap.mapListener(sessionModel, SessionEvent.LAYER_SELECTED, _onLayerSelect);
 			eventMap.mapListener(view.scanRequestBtn, MouseEvent.MOUSE_DOWN, _onScanRequestClick);
-			eventMap.mapListener(view.scanBtn, MouseEvent.MOUSE_DOWN, _onScanClick);
-			eventMap.mapListener(view.probeBtn, MouseEvent.MOUSE_DOWN, _onProbeClick);
-			eventMap.mapListener(view.placePlantBtn, MouseEvent.MOUSE_DOWN, _onPlacePlantClick);
-			eventMap.mapListener(view.removePlantBtn, MouseEvent.MOUSE_DOWN, _onRemovePlantClick);
 			eventMap.mapListener(view.wikiBtn, MouseEvent.MOUSE_DOWN, _showWiki);
 		}
 		
@@ -60,8 +56,6 @@ package mvc.mediators
 			}
 			
 			view.scanRequestBtn.enabled = scan_enabled
-			view.scanBtn.enabled = sessionModel.currentLayer && sessionModel.currentCell 
-				&& isNaN(sessionModel.currentCell.layers[sessionModel.currentLayer.id]);
 		}
 		
 		private function _showWiki(e:MouseEvent):void
@@ -84,41 +78,6 @@ package mvc.mediators
 									layer_id: sessionModel.currentLayer.id
 									})
 		}
-		
-		
-		private function _onScanClick(e:MouseEvent):void
-		{
-			_dispatchCommandEvent(GameEvent.SCAN_RESULT, { 
-									x: sessionModel.currentCell.x,
-									y: sessionModel.currentCell.y,
-									layer_id: sessionModel.currentLayer.id
-									})
-		}
-		
-		private function _onProbeClick(e:MouseEvent):void
-		{
-			_dispatchCommandEvent(GameEvent.DELIVER_PROBE, { 
-									x: sessionModel.currentCell.x,
-									y: sessionModel.currentCell.y,
-									layer_id: 4
-									})
-		}
-		
-		private function _onPlacePlantClick(e:MouseEvent):void
-		{
-			_dispatchCommandEvent(GameEvent.PLACE_PLANT, { 
-									x: sessionModel.currentCell.x,
-									y: sessionModel.currentCell.y
-									})
-		}
-		
-		private function _onRemovePlantClick(e:MouseEvent):void
-		{
-			_dispatchCommandEvent(GameEvent.REMOVE_PLANT, { 
-									plant_id: 2
-									})
-		}
-		
 		
 		private function _dispatchCommandEvent(eventType:String,data:Object=null):void
 		{

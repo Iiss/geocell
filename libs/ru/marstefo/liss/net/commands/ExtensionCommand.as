@@ -5,8 +5,8 @@ package ru.marstefo.liss.net.commands
 	import com.smartfoxserver.v2.entities.Room;
 	import com.smartfoxserver.v2.requests.ExtensionRequest;
 	import com.smartfoxserver.v2.SmartFox;
-	import ru.marstefo.liss.geo.mvc.events.GameEvent;
 	import robotlegs.bender.bundles.mvcs.Command;
+	import ru.marstefo.liss.geo.events.GameEvent;
 	import ru.marstefo.liss.net.models.ConfigModel;
 	/**
 	 * ...

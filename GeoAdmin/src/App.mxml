@@ -18,6 +18,7 @@
 		import robotlegs.bender.extensions.signalCommandMap.SignalCommandMapExtension;
 		import robotlegs.bender.framework.api.IContext;
 		import robotlegs.bender.framework.impl.Context;
+		import flash.system.Security;
 		
 		protected var context:IContext;
 		private function init():void
