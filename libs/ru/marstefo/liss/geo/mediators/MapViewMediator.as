@@ -74,7 +74,7 @@ package ru.marstefo.liss.geo.mediators
 		
 		private function _onMapUpdate(e:SessionEvent):void
 		{
-			(view.tileList.dataProvider as ArrayCollection).refresh();
+			(view.tileList.dataProvider as ArrayCollection).source = session.cells;
 		}
 	}
 }

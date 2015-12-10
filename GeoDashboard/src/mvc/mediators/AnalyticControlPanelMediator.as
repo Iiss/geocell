@@ -52,7 +52,7 @@ package mvc.mediators
 			{
 				var cl:CellLayerModel = sessionModel.currentCell.layers[sessionModel.currentLayer.id];
 				scan_enabled = !cl.scanRequest && isNaN(cl.value)
-					&& (!sessionModel.currentLayer.limit || sessionModel.currentLayer.limit > 0);
+					&& (!sessionModel.currentLayer.limit || sessionModel.currentLayer.limit > 0)
 			}
 			
 			view.scanRequestBtn.enabled = scan_enabled

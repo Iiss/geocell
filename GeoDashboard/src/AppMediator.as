@@ -82,9 +82,12 @@ package
 		
 		private function _onCellSelected(e:SessionEvent):void
 		{
-			var ptx:Number = view.map.width / session.mapInfo.width*(session.currentCell.x+.5);
-			var pty:Number = view.map.height / session.mapInfo.height*(session.currentCell.y+.5);
-			view.selector.addPoint(new Point(ptx,pty));
+			if (session.currentCell)
+			{
+				var ptx:Number = view.map.width / session.mapInfo.width*(session.currentCell.x+.5);
+				var pty:Number = view.map.height / session.mapInfo.height*(session.currentCell.y+.5);
+				view.selector.addPoint(new Point(ptx,pty));
+			}
 		}
 	}
 

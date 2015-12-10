@@ -1,15 +1,14 @@
 package ru.marstefo.liss.geo.models 
 {
-	/**
-	 * ...
-	 * @author liss
-	 */
-	public class CellModel 
+	import flash.events.EventDispatcher;
+	[Bindable]
+	public class CellModel extends EventDispatcher
 	{
 		public var layers:Array;
 		public var x:int;
 		public var y:int;
 		public var plant:*;
+		public var walkable:Boolean;
 		
 		public function CellModel(layersList:Array) 
 		{

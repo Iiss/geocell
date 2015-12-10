@@ -5,6 +5,7 @@ package ru.marstefo.liss.geo.models
 	import com.smartfoxserver.v2.entities.variables.RoomVariable;
 	import flash.events.EventDispatcher;
 	import ru.marstefo.liss.geo.models.ValueDictionary;
+	import com.smartfoxserver.v2.entities.data.ISFSArray;
 	/**
 	 * ...
 	 * @author liss
@@ -16,6 +17,7 @@ package ru.marstefo.liss.geo.models
 		public const SCAN_DATA_VAR:String  = "scanData";
 		public const MAP_INFO_DATA_VAR:String = "mapInfo";
 		public const LOCK_DATA_VAR:String = "locked";
+		public const MASK_DATA_VAR:String = "masks"
 		private var _room:Room;
 		private var _layers:Array;
 		private var _mapInfo:MapInfo;
@@ -42,6 +44,7 @@ package ru.marstefo.liss.geo.models
 			fillBlankData()
 			attachScanRequests();
 			attachScanResults();
+			updateMask();
 			
 			if (!locked)
 			{
@@ -104,6 +107,10 @@ package ru.marstefo.liss.geo.models
 					case LAYERS_DATA_VAR:
 						updateLayers();
 						break;
+						
+					case MASK_DATA_VAR:
+						updateMask();
+						break;
 				}	
 			}
 			
@@ -111,6 +118,35 @@ package ru.marstefo.liss.geo.models
 			{
 				dispatchEvent(new SessionEvent(SessionEvent.MAP_UPDATE));
 			}
+		}
+		
+		private function updateMask():void
+		{
+			if (!cells) return;
+			var maskArr:ISFSArray = room.getVariable(MASK_DATA_VAR).getSFSArrayValue()
+			var mask:Object = null;
+			if (maskArr.size() > 0) 
+				mask = maskArr.getSFSObject(0).toObject();
+			
+			var cm:CellModel;
+			for (var i:int = 0; i < cells.length; i++)
+			{
+				cm = cells[i] as CellModel;
+				if (mask) 
+				{
+					cm.walkable = (cm.y >= mask.y && 
+									cm.y < (mask.y + mask.h) && 
+									cm.x >= mask.x && 
+									cm.x < (mask.x + mask.w));
+				}
+				else
+				{
+					cm.walkable = true;
+				}
+			}
+			
+			if (currentCell && !currentCell.walkable)
+				currentCell = null;
 		}
 		
 		private function updateLayers():void
@@ -135,7 +171,8 @@ package ru.marstefo.liss.geo.models
 				{
 					_cells[i] = new CellModel(_layers);
 					_cells[i].y = Math.floor(i / _mapInfo.width);
-					_cells[i].x = i%_mapInfo.width;
+					_cells[i].x = i % _mapInfo.width;
+					_cells[i].walkable = Boolean(i % 2);
 				}
 			}	
 		}

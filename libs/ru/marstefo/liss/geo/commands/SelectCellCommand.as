@@ -28,8 +28,8 @@ package ru.marstefo.liss.geo.commands
 			
 			var ind:int = gameEvent.data.x + gameEvent.data.y * sessionModel.mapInfo.width;
 			if (ind < 0 || ind >= sessionModel.cells.length) return;
-			
-			sessionModel.currentCell = sessionModel.cells[ind];
+			if (sessionModel.cells[ind].walkable)
+				sessionModel.currentCell = sessionModel.cells[ind];	
 		}
 	}
 
