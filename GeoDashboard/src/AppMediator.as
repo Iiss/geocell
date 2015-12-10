@@ -10,6 +10,8 @@ package
 	import ru.marstefo.liss.geo.models.SessionEvent;
 	import ru.marstefo.liss.geo.models.SessionModel;
 	import ru.marstefo.liss.geo.events.GameEvent;
+	import flash.ui.Mouse;
+	import flash.ui.MouseCursor;
 	/**
 	 * ...
 	 * @author liss
@@ -78,6 +80,7 @@ package
 		private function _gotoGame():void
 		{
 			view.currentState = "in_game";
+			Mouse.cursor = MouseCursor.ARROW;
 		}
 		
 		private function _onCellSelected(e:SessionEvent):void

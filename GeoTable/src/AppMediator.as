@@ -4,11 +4,13 @@ package
 	import com.smartfoxserver.v2.core.SFSEvent;
 	import com.smartfoxserver.v2.SmartFox;
 	import flash.events.TimerEvent;
+	import flash.ui.Mouse;
+	import flash.ui.MouseCursor;
 	import flash.utils.Timer;
+	import robotlegs.bender.bundles.mvcs.Mediator;
 	import ru.marstefo.liss.geo.events.GameEvent;
 	import ru.marstefo.liss.geo.models.SessionEvent;
 	import ru.marstefo.liss.geo.models.SessionModel;
-	import robotlegs.bender.bundles.mvcs.Mediator;
 	/**
 	 * ...
 	 * @author liss
@@ -65,6 +67,7 @@ package
 		private function _onSessionLoad(e:SessionEvent):void
 		{
 			view.currentState = "loading";
+			Mouse.cursor = MouseCursor.ARROW;
 		}
 		
 		private function _onSessionReady(e:SessionEvent):void

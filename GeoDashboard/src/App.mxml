@@ -50,7 +50,7 @@
 	<s:Group visible="false" visible.in_game="true"
 	width="800" height="450" scaleX="{width/800}" scaleY="{height/450}">
 		<commonviews:MapView id ="map" width="800" height="450"/>
-		<gameobj:StationAdam x="137.5" y="87.5"/>
+		<!--gameobj:StationAdam x="137.5" y="87.5"/-->
 		<gameobj:StationEva x="437.5" y="237.5"/>
 		<gameobj:CellSelector id="selector"/>
 	</s:Group>

@@ -44,7 +44,7 @@
 		scaleX="{width/800}" scaleY="{height/450}">
 		<commonviews:MapView width="100%" height="100%" 
 		visible="false" visible.in_game="true"/>
-		<gameobj:StationAdam x="137.5" y="87.5"  />
+		<!--gameobj:StationAdam x="137.5" y="87.5"  /-->
 		<gameobj:StationEva x="437.5" y="237.5" />
 		<minigame:MinigameView width="100%" height="100%"/>
 		<comp:SelectionLock width="100%" height="100%" visible="false" />
@@ -55,7 +55,7 @@
 		visible="false" visible.in_game="true"/>
 	<commonviews:PreloaderView width="100%" height="100%"
 		visible="false" visible.loading="true" />
-	<commonviews:ConsoleView width="100%" height="100%"
+	<commonviews:ConsoleView id="console" width="100%" height="100%"
 		visible.default="true" visible="false"/>
 	
 </s:Application>
