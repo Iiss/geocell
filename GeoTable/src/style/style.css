@@ -22,3 +22,10 @@ s|WindowedApplication{
 	fontFamily:BenderFont;
 	textAlign: center;
 }
+
+.tileRendererLabel{
+	color: #ffffff;
+	fontSize: 10;
+	fontFamily:BenderFont;
+	textAlign: center;
+}

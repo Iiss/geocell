@@ -24,6 +24,7 @@ package ru.marstefo.liss.geo.commands
 		{
 			var data:XML = new XML(result);
 			wikiConfig.wikiURL = data.url.toString();
+			wikiConfig.quizURL = data.quiz_url.toString();
 		}	
 	}
 

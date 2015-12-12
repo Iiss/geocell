@@ -60,10 +60,16 @@ package ru.marstefo.liss.geo.models
 		public function get currentCell():CellModel { return _curCell; }
 		public function set currentCell(value:CellModel):void
 		{
-			if (_curCell == value) return;
-			_curCell = value;
+			if (_curCell != value)
+			{
+				_curCell = value;
+				dispatchEvent(new SessionEvent(SessionEvent.CELL_SELECTED));
+			}
 			
-			dispatchEvent(new SessionEvent(SessionEvent.CELL_SELECTED));
+			if (value)
+			{
+				dispatchEvent(new SessionEvent(SessionEvent.CELL_CLICKED));
+			}
 		}
 		public function get currentLayer():Object { return _curLayer; }
 		public function set currentLayer(value:Object):void
@@ -145,8 +151,10 @@ package ru.marstefo.liss.geo.models
 				}
 			}
 			
-			if (currentCell && !currentCell.walkable)
+			if (currentCell && (!currentCell.walkable)) 
+			{
 				currentCell = null;
+			}
 		}
 		
 		private function updateLayers():void

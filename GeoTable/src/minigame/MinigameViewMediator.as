@@ -31,7 +31,7 @@ package minigame
 		override public function initialize():void 
 		{
 			super.initialize();
-			eventMap.mapListener(session, SessionEvent.CELL_SELECTED, _onCellSelected);
+			eventMap.mapListener(session, SessionEvent.CELL_CLICKED, _onCellSelected);
 			eventMap.mapListener(session, SessionEvent.LAYER_SELECTED, _onLayerSelected);
 			eventMap.mapListener(game, MinigameEvent.WIN, _onWin);
 		}
@@ -45,8 +45,9 @@ package minigame
 		
 		private function _onCellSelected(e:SessionEvent):void
 		{
-			if (session.currentLayer.id != 2 && session.currentLayer.id != 3) return;
+			if (session.currentLayer.id <1 || session.currentLayer.id > 3) return;
 			if (session.currentLayer.limit == 0) return;
+			if (!isNaN(session.currentCell.layers[session.currentLayer.id].value)) return;
 			
 			var cell:CellModel = session.currentCell;
 			var cellW:int = 25;
@@ -83,8 +84,9 @@ package minigame
 			var scanType:String;
 			switch(session.currentLayer.id)
 			{
-				case 2: scanType = ScanType.MAGNET ;break
-				case 3: scanType = ScanType.GRAVI ;break
+				case 1: scanType = ScanType.RADIO ; break;
+				case 2: scanType = ScanType.MAGNET ; break;
+				case 3: scanType = ScanType.GRAVI ; break;
 			}
 			
 			game.setup(scanType);

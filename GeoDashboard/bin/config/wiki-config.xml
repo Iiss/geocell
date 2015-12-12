@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <config>
 	<url><![CDATA[http://192.168.3.52:8000/]]></url>
+	<quiz_url><![CDATA[http://192.168.3.52/quiz/]]></quiz_url>
 </config>

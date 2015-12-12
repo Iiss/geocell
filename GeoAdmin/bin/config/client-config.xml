@@ -5,6 +5,6 @@
 	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -->
 <MarsClientConfig>
-	<login>geoadmin</login>
+	<login>geoadmin2</login>
 	<room>GeoCell</room>
 </MarsClientConfig>

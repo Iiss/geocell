@@ -17,12 +17,12 @@ package minigame.base
 			accessories.show();
 		}
 
-		private function onTimer(event:TimerEvent):void
+		protected function onTimer(event:TimerEvent):void
 		{
 			for (var i:int = 0; i < elements.length; i++) elements[i].step(timer.currentCount);
 		}
 
-		private function finishWin():void
+		protected function finishWin():void
 		{
 			accessories.finishWin();
 		}
@@ -62,6 +62,7 @@ package minigame.base
 		{
 			removeEventListener(MouseEvent.CLICK, onClick);
 			timer.removeEventListener(TimerEvent.TIMER, onTimer);
+			timer.stop();
 			this.accessories = null;
 		}
 	}

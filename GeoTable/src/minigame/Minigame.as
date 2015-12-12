@@ -7,6 +7,7 @@ package minigame
 	import minigame.base.*;
 	import minigame.gravity.StripeField;
 	import minigame.magnetic.ArrowField;
+	import minigame.radio.SatteliteScan;
 	import ru.marstefo.liss.geo.models.ScanType;
 	import mx.core.UIComponent;
 	
@@ -104,6 +105,15 @@ package minigame
 			content.visible = false;
 			closeGroup.visible = false;
 			grid.visible = false;
+			if (content.numChildren)
+			{
+				var game:MinigameFieldBase = content.getChildAt(0) as MinigameFieldBase;
+				if (game)
+				{
+					game.die();
+				}
+			}
+			
 		}
 
 		private function playShutdownAnimation(clip:MovieClip):void
@@ -228,6 +238,11 @@ package minigame
 					
 				case ScanType.GRAVI:
 					g = new StripeField(gameState, this);
+					grid = grid3to6; 
+					break;
+					
+				case ScanType.RADIO:
+					g = new SatteliteScan(gameState, this);
 					grid = grid3to6; 
 					break;
 			}

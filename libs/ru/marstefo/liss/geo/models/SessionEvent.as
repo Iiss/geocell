@@ -13,6 +13,7 @@ package ru.marstefo.liss.geo.models
 		public static const NEXT_SESSION:String = "NEXT_SESSION";
 		public static const MAP_UPDATE:String = "MAP_UPDATE";
 		public static const CELL_SELECTED:String = "CELL_SELECTED";
+		public static const CELL_CLICKED:String = "CELL_CLICKED";
 		public static const LAYER_SELECTED:String = "LAYER_SELECTED";
 		public static const LAYERS_CHANGED:String = "LAYERS_CHANGED";
 		public static const LOCKED:String = "LOCKED";
