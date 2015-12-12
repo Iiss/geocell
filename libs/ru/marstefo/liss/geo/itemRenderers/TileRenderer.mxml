@@ -11,9 +11,10 @@
 		import flash.geom.ColorTransform;
 		import ru.marstefo.liss.geo.models.CellModel;
 		import ru.marstefo.liss.geo.models.ValueDictionary;
+		import spark.filters.GlowFilter;
+		
 		
 		public static var layerId:int;
-		
 		private function checkV(data:*):Boolean
 		{
 			var cell:CellModel = data as CellModel;
@@ -41,25 +42,35 @@
 			return false;
 		}
 		//0x59110B
+		private function getText(data:*):String
+		{
+			return ValueDictionary.VALUES[data.layers[layerId].value].toString();
+		}
 		]]>
 	</fx:Script>
-	<s:Rect id="theBackgroundObject" top="0" bottom="0" left="0" right="0"
-	visible="{checkValue(data)}">
-        <s:fill>
-            <s:SolidColor color="0"
-                alpha=".75"/>
-        </s:fill>
-    </s:Rect>
+	<s:Group visible="{checkValue(data)}"  width="100%" height="100%">
+		<s:Rect id="theBackgroundObject" top="2" bottom="2" left="2" right="2">
+			<s:fill>
+				<s:SolidColor color="0"
+					alpha="1"/>
+			</s:fill>
+		</s:Rect>
+		<s:Label id="value_lbl" width="100%" y="{.5*(height-value_lbl.height)+1}"
+		textAlign="center" text="{getText(data)}"
+		styleName="tileRendererLabel"/>
+	</s:Group>
+	
 	<!---->
 	<s:Group id="scan_need" width="100%" height="100%" visible="{checkV(data)}">
 		<s:Rect top="2" bottom="2" left="2" right="2">
 			<s:fill>
-				<s:SolidColor color="0xD8896B" alpha=".75"/>
+				<s:SolidColor color="0xD8896B" alpha="1"/>
 			</s:fill>
 		</s:Rect>
-	<s:Label id="lbl" width="100%" y="{.5*(height-lbl.height)+2}" textAlign="center" text="?"
-		color="0xFFFFFF" styleName=".cellLabel" fontSize="12" />
+	<s:Label id="lbl" width="100%" y="{.5*(height-lbl.height)+1}" textAlign="center" text="?"
+		styleName="tileRendererLabel"/>
 	</s:Group>
+	
 	<s:Rect width="100%" height="100%" visible="{!data.walkable}">
 		<s:fill>
 			<s:SolidColor color="0" alpha=".6"/>
