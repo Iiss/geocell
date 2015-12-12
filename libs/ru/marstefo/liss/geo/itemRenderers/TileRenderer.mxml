@@ -60,11 +60,10 @@
 		styleName="tileRendererLabel"/>
 	</s:Group>
 	
-	<!---->
 	<s:Group id="scan_need" width="100%" height="100%" visible="{checkV(data)}">
 		<s:Rect top="2" bottom="2" left="2" right="2">
 			<s:fill>
-				<s:SolidColor color="0xD8896B" alpha="1"/>
+				<s:SolidColor color="0xF59E82" alpha="1"/>
 			</s:fill>
 		</s:Rect>
 	<s:Label id="lbl" width="100%" y="{.5*(height-lbl.height)+1}" textAlign="center" text="?"
