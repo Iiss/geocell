@@ -16,6 +16,5 @@
 		<commoncomp:Legend width="200" id="legend"/>
 	</s:VGroup>
 	<commoncomp:CellInfoPanel height="100%" width="145" />
-	<s:Button id="scanBtn" label="Сканировать" width="145"/>
 	<s:Button id="probeBtn" label="Доставить пробу" width="145"/>
 </s:BorderContainer>

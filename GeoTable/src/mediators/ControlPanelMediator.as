@@ -29,7 +29,6 @@ package mediators
 			eventMap.mapListener(sessionModel, SessionEvent.CELL_SELECTED, _update);
 			eventMap.mapListener(sessionModel, SessionEvent.MAP_UPDATE, _update);
 			eventMap.mapListener(sessionModel, SessionEvent.LAYER_SELECTED, _onLayerSelect);
-			eventMap.mapListener(view.scanBtn, MouseEvent.MOUSE_DOWN, _onScanClick);
 			eventMap.mapListener(view.probeBtn, MouseEvent.MOUSE_DOWN, _onProbeClick);
 		}
 		
@@ -42,15 +41,6 @@ package mediators
 		private function _update(e:SessionEvent):void
 		{
 			
-		}
-		
-		private function _onScanClick(e:MouseEvent):void
-		{
-			_dispatchCommandEvent(GameEvent.SCAN_RESULT, { 
-									x: sessionModel.currentCell.x,
-									y: sessionModel.currentCell.y,
-									layer_id: sessionModel.currentLayer.id
-									})
 		}
 		
 		private function _onProbeClick(e:MouseEvent):void
